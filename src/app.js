@@ -69,6 +69,18 @@ app.get('/weather',(req, res)=>{
     })
 })
 
+app.get('/weatherOnClick', (req, res)=>{
+    forecast(req.query.lat, req.query.lon, (error, forecastData) => {
+        if(error){
+            return res.send({ error })
+        }
+        console.log(forecastData);
+        res.send({
+            forecast: forecastData
+        })
+    })
+})
+
 app.get('/products', (req, res)=>{
     
     if (!req.query.search) {

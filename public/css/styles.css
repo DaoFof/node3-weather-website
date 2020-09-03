@@ -53,3 +53,7 @@ button{
     color: white;
     padding: 8px;
 }
+
+button#send-location{
+    margin-top: 16px
+}
